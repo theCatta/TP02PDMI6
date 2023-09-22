@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.EditPopupPage"
+             Title="Editar"
+             BackgroundColor="Transparent">
+
+        <Grid BackgroundColor="Transparent" Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+
+        <Label Grid.Row="0"
+               Text="Tarefa:"
+               TextColor="White"
+               FontSize="18"
+               FontAttributes="Bold"
+               Margin="10,10,0,0"
+               HorizontalOptions="Center"/>
+       
+            <Entry Grid.Row="1"
+                x:Name="txtTitle"
+                TextColor="White" 
+                Text="{Binding Title}" 
+                Margin="10,10,0,0" 
+                WidthRequest="500"/>
+    
+            
+            <Label Grid.Row="2"
+               Text="Description"
+               TextColor="White"
+               FontSize="18"
+               FontAttributes="Bold"
+               Margin="10,10,0,0"
+               HorizontalOptions="Center"/>
+
+            <Entry Grid.Row="3"
+                x:Name="txtDescription"
+                TextColor="White" 
+                Text="{Binding Description}"
+                Margin="10,10,0,0"
+                WidthRequest="500"/>
+            
+            <Label Grid.Row="4"
+               Text="Creation date"
+               TextColor="White"
+               FontSize="18"
+               FontAttributes="Bold"
+               Margin="10,10,0,0"
+               HorizontalOptions="Center"/>
+
+            <DatePicker Grid.Row="5"
+                x:Name="txtCreated"
+                Date="{Binding Created}"
+                TextColor="White"
+                Margin="10,10,0,0" 
+                HorizontalOptions="Center"/>
+
+            <Label Grid.Row="6"
+               Text="Priority"
+               TextColor="White"
+               FontSize="18"
+               FontAttributes="Bold"
+               Margin="10,10,0,0" 
+               HorizontalOptions="Center"/>
+
+            <Entry Grid.Row="7"
+                x:Name="txtPriority"
+                Keyboard="Numeric"
+                TextColor="White" 
+                Text="{Binding Priority}" 
+                Margin="10,10,0,0"
+                WidthRequest="500"/>
+
+            <Button Grid.Row="8"
+                WidthRequest="100"
+                Text="Salvar"
+                TextColor="White"
+                BackgroundColor="Blue"
+                Margin="0,40,150,0"
+                Clicked="onEdit"
+                />
+
+            <Button Grid.Row="9"
+                WidthRequest="100"
+                Text="Cancelar"
+                TextColor="Black"
+                BackgroundColor="Yellow"
+                Margin="150, 40, 0, 0"
+                Clicked="onCancel"
+               />
+        </Grid>
+
+</ContentPage>

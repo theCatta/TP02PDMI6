@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.MainPage"
+             BackgroundColor="Transparent">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20, 20, 20, 20">
+            <RefreshView RefreshColor="AliceBlue"
+                         IsRefreshing= "{Binding IsRefreshing}"
+                         Command="{Binding RefreshCommand}">
+            <ScrollView>
+                <ListView 
+                    x:Name="lstTasks"
+                    BackgroundColor="Transparent"
+                    SeparatorVisibility="Default"
+                    ItemSelected="OnItemSelected" 
+                    WidthRequest="400">
+        
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Border Margin="5"
+                                        StrokeShape="RoundRectangle 10,10,10,10">
+                                    <StackLayout Padding="5, 5, 5, 5">
+                                        <Label Text="{Binding Title}"
+                                               TextColor="Blue"
+                                               HorizontalOptions="Center"/>
+
+                                        <Label TextColor="White"
+                                               Text="{Binding Description}"/>
+                                    </StackLayout>
+                                </Border>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            </RefreshView>
+            <Button Text="+" Clicked="OnAddTaskClicked" BackgroundColor="Yellow" TextColor="Black" WidthRequest="30" FontSize="20"/>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
